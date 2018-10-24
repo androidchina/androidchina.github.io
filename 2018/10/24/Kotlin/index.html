@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="简体中文">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android, Junjie">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#第1章 Kotlin简介 ##1.1 Kotlin的主要特征 ###1.1.1 Kotlin的主要特征之目标平台  ###1.1.2 Kotlin的主要特征之静态类型  ###1.1.3 Kotlin的主要特征之函数式编程  ###1.1.4 Kotlin的主要特征之免费开源  ##1.2 Kotlin在不同平台的开发 ###1.2.1 Kotlin在Android平台的开发简介  ###1.2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JunJie-Blog">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/Kotlin/index.html">
+<meta property="og:site_name" content="JunJie-Blog">
+<meta property="og:description" content="#第1章 Kotlin简介 ##1.1 Kotlin的主要特征 ###1.1.1 Kotlin的主要特征之目标平台  ###1.1.2 Kotlin的主要特征之静态类型  ###1.1.3 Kotlin的主要特征之函数式编程  ###1.1.4 Kotlin的主要特征之免费开源  ##1.2 Kotlin在不同平台的开发 ###1.2.1 Kotlin在Android平台的开发简介  ###1.2">
+<meta property="og:locale" content="简体中文">
+<meta property="og:image" content="https://i.imgur.com/RFsTbJz.png">
+<meta property="og:image" content="https://i.imgur.com/91MeyAb.png">
+<meta property="og:image" content="https://i.imgur.com/10Y2vJs.png">
+<meta property="og:image" content="https://i.imgur.com/xAplUaU.png">
+<meta property="og:image" content="https://i.imgur.com/QBFihot.png">
+<meta property="og:image" content="https://i.imgur.com/CeotETE.png">
+<meta property="og:image" content="https://i.imgur.com/N4E3hth.png">
+<meta property="og:image" content="https://i.imgur.com/nPFbXPU.png">
+<meta property="og:image" content="https://i.imgur.com/7nY3DrG.png">
+<meta property="og:image" content="https://i.imgur.com/2aKrld2.png">
+<meta property="og:image" content="https://i.imgur.com/edvE3LH.png">
+<meta property="og:image" content="https://i.imgur.com/fSHJcIj.png">
+<meta property="og:image" content="https://i.imgur.com/VeBWK2F.png">
+<meta property="og:image" content="https://i.imgur.com/zTDhvsy.png">
+<meta property="og:image" content="https://i.imgur.com/YFFHKsk.png">
+<meta property="og:image" content="https://i.imgur.com/5PnXWRZ.png">
+<meta property="og:image" content="https://i.imgur.com/6Wew53D.png">
+<meta property="og:image" content="https://i.imgur.com/Twtaafq.png">
+<meta property="og:image" content="https://i.imgur.com/X19OJpX.png">
+<meta property="og:image" content="https://i.imgur.com/GYgs8BT.png">
+<meta property="og:image" content="https://i.imgur.com/KcuLkJs.png">
+<meta property="og:image" content="https://i.imgur.com/8IUlI6o.png">
+<meta property="og:image" content="https://i.imgur.com/vJ0F2uI.png">
+<meta property="og:image" content="https://i.imgur.com/cKDZLWg.png">
+<meta property="og:image" content="https://i.imgur.com/JRrgHyK.png">
+<meta property="og:image" content="https://i.imgur.com/0DDj3l8.png">
+<meta property="og:image" content="https://i.imgur.com/oU3iXIm.png">
+<meta property="og:image" content="https://i.imgur.com/mrYErVk.png">
+<meta property="og:image" content="https://i.imgur.com/9t7SEdJ.png">
+<meta property="og:image" content="https://i.imgur.com/84OQHmJ.png">
+<meta property="og:image" content="https://i.imgur.com/O5oykmD.png">
+<meta property="og:image" content="https://i.imgur.com/Um5IDEp.png">
+<meta property="og:image" content="https://i.imgur.com/Osjj2b8.png">
+<meta property="og:image" content="https://i.imgur.com/Cfi0dUn.png">
+<meta property="og:image" content="https://i.imgur.com/PiiTCR3.png">
+<meta property="og:image" content="https://i.imgur.com/GM4PQVl.png">
+<meta property="og:image" content="https://i.imgur.com/ZPllXRE.png">
+<meta property="og:image" content="https://i.imgur.com/xDRyzS7.png">
+<meta property="og:image" content="https://i.imgur.com/Vc1vMBQ.png">
+<meta property="og:image" content="https://i.imgur.com/IwTHAgk.png">
+<meta property="og:image" content="https://i.imgur.com/LZZ4bww.png">
+<meta property="og:image" content="https://i.imgur.com/0WHnbgu.png">
+<meta property="og:image" content="https://i.imgur.com/fc1KkXg.png">
+<meta property="og:updated_time" content="2018-10-23T08:04:50.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JunJie-Blog">
+<meta name="twitter:description" content="#第1章 Kotlin简介 ##1.1 Kotlin的主要特征 ###1.1.1 Kotlin的主要特征之目标平台  ###1.1.2 Kotlin的主要特征之静态类型  ###1.1.3 Kotlin的主要特征之函数式编程  ###1.1.4 Kotlin的主要特征之免费开源  ##1.2 Kotlin在不同平台的开发 ###1.2.1 Kotlin在Android平台的开发简介  ###1.2">
+<meta name="twitter:image" content="https://i.imgur.com/RFsTbJz.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Junjie'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/24/Kotlin/">
+
+
+
+
+
+  <title> | JunJie-Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="简体中文">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JunJie-Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/24/Kotlin/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JunJie">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JunJie-Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-24T10:33:48+08:00">
+                2018-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#第1章 Kotlin简介</p>
+<p>##1.1 Kotlin的主要特征</p>
+<p>###1.1.1 Kotlin的主要特征之目标平台</p>
+<p><img src="https://i.imgur.com/RFsTbJz.png" alt=""></p>
+<p>###1.1.2 Kotlin的主要特征之静态类型</p>
+<p><img src="https://i.imgur.com/91MeyAb.png" alt=""></p>
+<p>###1.1.3 Kotlin的主要特征之函数式编程</p>
+<p><img src="https://i.imgur.com/10Y2vJs.png" alt=""></p>
+<p>###1.1.4 Kotlin的主要特征之免费开源</p>
+<p><img src="https://i.imgur.com/xAplUaU.png" alt=""></p>
+<p>##1.2 Kotlin在不同平台的开发</p>
+<p>###1.2.1 Kotlin在Android平台的开发简介</p>
+<p><img src="https://i.imgur.com/QBFihot.png" alt=""></p>
+<p>###1.2.2 Kotlin在服务器端的开发简介</p>
+<p><img src="https://i.imgur.com/CeotETE.png" alt=""></p>
+<p>##1.2 Kotlin的设计哲学</p>
+<p>###1.2.1 Kotlin的设计哲学之实用</p>
+<p><img src="https://i.imgur.com/N4E3hth.png" alt=""></p>
+<p>###1.2.2 Kotlin的设计哲学之简洁</p>
+<p><img src="https://i.imgur.com/nPFbXPU.png" alt=""></p>
+<p>###1.2.3 Kotlin的设计哲学之安全</p>
+<p><img src="https://i.imgur.com/7nY3DrG.png" alt=""></p>
+<p>###1.2.4 Kotlin的设计哲学之可互操作</p>
+<p><img src="https://i.imgur.com/2aKrld2.png" alt=""></p>
+<p>#第2章 Kotlin的基本知识</p>
+<p>##2.1 变量的声明和初始化<br><img src="https://i.imgur.com/edvE3LH.png" alt=""></p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    // val str = &quot;Kotlin Programming language&quot;          // 隐式声明
+    val str: String = &quot;Kotlin Programming language&quot;      // 显式声明
+
+    // val answer = 18
+    val answer: Int = 18
+
+    // 如果我们使用浮点常量作为变量的初始值，那么变量的类型是Double
+    val fp = 12.3
+
+    // 如果没有为变量赋予初始值，那么必须显式地指定变量的类型
+    // val i2  这样代码会报错
+    val i2: Int
+    i2 = 56
+}
+</code></pre><p>##2.2 可变变量和不可变变量</p>
+<p><img src="https://i.imgur.com/fSHJcIj.png" alt=""></p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    val a = 3
+    val b = 5
+
+    val str: String
+    if (a &gt; b) {
+        str = &quot;OK&quot;
+    } else {
+        str = &quot;Cancel&quot;
+    }
+
+    val languages = arrayListOf(&quot;Java&quot;) // 声明一个不可变的引用
+    languages.add(&quot;Kotlin&quot;) // 修改引用指向的对象
+
+    // 编译器在推断变量的数据类型的时候，仅仅是通过变量的初始值进行推断
+    // 而不会根据对变量初始化之后再给变量重新赋的值进行推断
+    var i = 18
+    // i = &quot;hello&quot;
+
+    var相当于java中的final
+}
+</code></pre><p>##2.3 函数</p>
+<p><img src="https://i.imgur.com/VeBWK2F.png" alt=""></p>
+<pre><code>// 有返回值的函数
+fun max(a: Int, b: Int): Int {
+    return if (a &gt; b) a else b
+}
+
+fun main(args: Array&lt;String&gt;) {
+    println(max(1, 2))
+}
+</code></pre><p>##2.4 语句和表达式</p>
+<p><img src="https://i.imgur.com/zTDhvsy.png" alt=""></p>
+<ol>
+<li><p>Java</p>
+<pre><code>public class Test {
+    public static void main(String[] args) {
+        int a = 1;
+        int b = (a = 8);
+        System.out.println(b);
+    }
+}
+</code></pre></li>
+<li><p>Kotlin</p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    val a = 1
+    // 在Kotlin中，赋值变成了语句
+    // val b = (a = 8)
+}
+</code></pre></li>
+</ol>
+<p>##2.5 函数的简化</p>
+<p><img src="https://i.imgur.com/YFFHKsk.png" alt=""></p>
+<pre><code>/*
+fun max(a: Int, b: Int): Int {
+    return if (a &gt; b) a else b
+}
+*/
+
+// 省略花括号
+// fun max(a: Int, b: Int): Int = if (a &gt; b) a else b
+
+// 省略返回值类型
+fun max(a: Int, b: Int) = if (a &gt; b) a else b
+
+fun main(args: Array&lt;String&gt;) {
+    println(max(1, 2))
+}
+</code></pre><p>##2.6 字符串模板</p>
+<p><img src="https://i.imgur.com/5PnXWRZ.png" alt=""></p>
+<ol>
+<li><p>字符串是变量</p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+
+    val name = if (args.size &gt; 0) args[0] else &quot;Kotlin&quot;
+
+    // 相当于Java中的字符串连接：&quot;Hello, &quot; + name + &quot;!&quot;
+    println(&quot;Hello, $name!&quot;)
+
+    // 如果字符串需要包含$，则需要进行转义处理
+    println(&quot;Hello, \$name!&quot;)
+}
+</code></pre><p> 打印值：</p>
+<pre><code>Hello，Kotlin!
+Hello，$name!
+</code></pre></li>
+</ol>
+<ol start="2">
+<li><p>字符串是表达式</p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+
+    // 占位符是表达式的时候，需要使用花括号{}
+    if (args.size &gt; 0) {
+        println(&quot;Hello, ${args[0]}&quot;)
+    }
+
+    // 可以在双引号“”中嵌套双引号，但是这个双引号必须要在{}中
+    println(&quot;Hello, ${if (args.size &gt; 0) args[0] else &quot;Kotlin&quot;}&quot;)
+}
+</code></pre></li>
+</ol>
+<p>##2.7 类和对象的关系</p>
+<p><img src="https://i.imgur.com/6Wew53D.png" alt=""></p>
+<p>##2.8 声明类的基本语法</p>
+<p><img src="https://i.imgur.com/Twtaafq.png" alt=""></p>
+<ol>
+<li><p>Java</p>
+<pre><code>public class Person {
+    private final String name;
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+</code></pre></li>
+<li><p>Kotlin</p>
+<pre><code>class Person(val name: String)
+</code></pre></li>
+</ol>
+<p>##2.9 属性</p>
+<p><img src="https://i.imgur.com/X19OJpX.png" alt=""></p>
+<ol>
+<li><p>在kotlin中定义属性</p>
+<blockquote>
+<p>Person.kt</p>
+</blockquote>
+<pre><code>class Person(
+    val name: String,
+    var isMarried: Boolean
+)
+</code></pre><blockquote>
+<p>Test.java</p>
+</blockquote>
+<pre><code>public class Test {
+    public static void main(String[] args) {
+        Person person = new Person(&quot;Bob&quot;, true);
+        System.out.println(person.getName());
+        person.setMarried(false);
+        System.out.println(person.isMarried());
+    }
+}
+</code></pre><blockquote>
+<p>Test.kt</p>
+</blockquote>
+<pre><code>object Test {
+    @JvmStatic
+    fun main(args: Array&lt;String&gt;) {
+        val person = Person(&quot;Bob&quot;, true)
+        println(person.name)
+        person.isMarried = false
+        println(person.isMarried)
+    }
+}
+</code></pre></li>
+<li><p>在java中定义属性</p>
+<blockquote>
+<p>Person.java</p>
+</blockquote>
+<pre><code>public class Person {
+    private final String name;
+    private Boolean isMarried;
+
+    public Person(String name, Boolean isMarried) {
+        this.name = name;
+        this.isMarried = isMarried;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Boolean isMarried() {
+        return isMarried;
+    }
+
+    public void setMarried(Boolean isMarried) {
+        this.isMarried = isMarried;
+    }
+}
+</code></pre><blockquote>
+<p>Test.kt</p>
+</blockquote>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    val person = Person(&quot;Bob&quot;, true)
+
+    println(person.name)
+
+    person.isMarried = false
+    println(person.isMarried)
+}
+</code></pre></li>
+</ol>
+<p>##2.10 自定义属性访问器</p>
+<p><img src="https://i.imgur.com/GYgs8BT.png" alt=""></p>
+<pre><code>class Rectangle(val height: Int, val width: Int) {
+    val isSquare: Boolean
+    /*
+        get() {
+            return height == width
+        }
+    */
+
+    get() = height == width
+}
+
+fun main(args: Array&lt;String&gt;) {
+    val rectangle = Rectangle(41, 43)
+    println(rectangle.isSquare)
+}
+</code></pre><p>##2.11 Kotlin源代码的布局之目录和包</p>
+<p><img src="https://i.imgur.com/KcuLkJs.png" alt=""></p>
+<p>##2.12 声明枚举类</p>
+<p><img src="https://i.imgur.com/8IUlI6o.png" alt=""></p>
+<pre><code>/*
+enum class Color {
+    RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
+}
+*/
+
+enum class Color(
+        val r: Int, val g: Int, val b: Int
+) {
+    RED(255, 0, 0), ORANGE(255, 165, 0),
+    YELLOW(255, 255, 0), GREEN(0, 255, 0),
+    BLUE(0, 0, 255), INDIGO(75, 0, 130), VIOLET(238, 130, 238);
+
+    fun rgb() = (r * 256 + g) * 256 + b
+}
+
+fun main(args: Array&lt;String&gt;) {
+    println(Color.BLUE.rgb())
+}
+</code></pre><p>##2.13 使用when处理枚举类</p>
+<p><img src="https://i.imgur.com/vJ0F2uI.png" alt=""></p>
+<pre><code>enum class Color {
+    RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
+}
+
+fun getColorName(color: Color) =
+        when (color) {
+            Color.RED -&gt; &quot;红&quot;
+            Color.ORANGE -&gt; &quot;橙&quot;
+            Color.YELLOW -&gt; &quot;黄&quot;
+            Color.GREEN -&gt; &quot;绿&quot;
+            Color.BLUE -&gt; &quot;蓝&quot;
+            Color.INDIGO -&gt; &quot;靛&quot;
+            Color.VIOLET -&gt; &quot;紫&quot;
+        }
+
+fun main(args: Array&lt;String&gt;) {
+    println(getColorName(Color.GREEN))
+}
+</code></pre><p>可以把多个值组合到一个分支中</p>
+<pre><code>import Color.*
+
+enum class Color {
+    RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
+}
+
+fun getColorName(color: Color) =
+        when (color) {
+            Color.RED -&gt; &quot;红&quot;
+            Color.ORANGE -&gt; &quot;橙&quot;
+            Color.YELLOW -&gt; &quot;黄&quot;
+            Color.GREEN -&gt; &quot;绿&quot;
+            Color.BLUE -&gt; &quot;蓝&quot;
+            Color.INDIGO -&gt; &quot;靛&quot;
+            Color.VIOLET -&gt; &quot;紫&quot;
+        }
+
+// 使用Color的全名
+fun getWarmth(color: Color) =
+        when (color) {
+            Color.RED, Color.ORANGE, Color.YELLOW -&gt; &quot;warm&quot;
+            Color.GREEN -&gt; &quot;neutral&quot;
+            Color.BLUE, Color.INDIGO, Color.VIOLET -&gt; &quot;cold&quot;
+        }
+
+// 导入Color时可以直接使用
+fun getWarmth2(color: Color) =
+        when (color) {
+            RED, ORANGE, YELLOW -&gt; &quot;warm&quot;
+            GREEN -&gt; &quot;neutral&quot;
+            BLUE, INDIGO, VIOLET -&gt; &quot;cold&quot;
+        }
+
+fun main(args: Array&lt;String&gt;) {
+    println(getColorName(Color.GREEN))
+    println(getWarmth(Color.ORANGE))
+    println(getWarmth2(Color.ORANGE))
+}
+</code></pre><p>##2.14 在when分支中使用不同的对象</p>
+<p><img src="https://i.imgur.com/cKDZLWg.png" alt=""></p>
+<pre><code>import Color.*
+
+enum class Color {
+    RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
+}
+
+fun mix(c1: Color, c2: Color) =
+        when (setOf(c1, c2)) {
+            setOf(RED, YELLOW) -&gt; ORANGE
+            setOf(YELLOW, BLUE) -&gt; GREEN
+            setOf(BLUE, VIOLET) -&gt; INDIGO
+            else -&gt; throw Exception(&quot;Dirty Color&quot;)
+        }
+
+fun main(args: Array&lt;String&gt;) {
+    println(mix(BLUE,YELLOW))
+}
+</code></pre><p>##2.15 使用不带参数的when结构</p>
+<p><img src="https://i.imgur.com/JRrgHyK.png" alt=""></p>
+<pre><code>import Color.*
+
+enum class Color {
+    RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
+}
+
+fun mix(c1: Color, c2: Color) =
+        when (setOf(c1, c2)) {
+            setOf(RED, YELLOW) -&gt; ORANGE
+            setOf(YELLOW, BLUE) -&gt; GREEN
+            setOf(BLUE, VIOLET) -&gt; INDIGO
+            else -&gt; throw Exception(&quot;Dirty Color&quot;)
+        }
+
+fun mixOptimized(c1: Color, c2: Color) =
+        when {
+            (c1 == RED &amp;&amp; c2 == YELLOW) ||
+                    (c1 == YELLOW &amp;&amp; c2 == RED)-&gt; ORANGE
+            (c1 == YELLOW &amp;&amp; c2 == BLUE) ||
+                    (c1 == BLUE &amp;&amp; c2 == YELLOW) -&gt; GREEN
+            (c1 == BLUE &amp;&amp; c2 == VIOLET) ||
+                    (c1 == VIOLET &amp;&amp; c2 == BLUE) -&gt; INDIGO
+            else -&gt; throw Exception(&quot;Dirty Color&quot;)
+        }
+
+fun main(args: Array&lt;String&gt;) {
+    println(mix(BLUE, YELLOW))
+    println(mixOptimized(BLUE, YELLOW))
+}
+</code></pre><p>##2.16 智能类型转换</p>
+<p><img src="https://i.imgur.com/0DDj3l8.png" alt=""></p>
+<p>##2.17 重构之使用when替换if</p>
+<p><img src="https://i.imgur.com/oU3iXIm.png" alt=""></p>
+<pre><code>interface Expr
+class Num(val value: Int) : Expr
+class Sum(val left: Expr, val right: Expr) : Expr
+
+/*
+fun eval(e: Expr) : Int {
+    if (e is Num) {
+        return e.value
+    }
+
+    if (e is Sum) {
+        return eval(e.left) + eval(e.right)
+    }
+
+    throw IllegalArgumentException(&quot;Unknown expression&quot;)
+}
+*/
+
+/*
+fun eval(e: Expr) : Int =
+    if (e is Num) {
+        e.value
+    } else if (e is Sum) {
+        eval(e.left) + eval(e.right)
+    } else {
+        throw IllegalArgumentException(&quot;Unknown expression&quot;)
+    }
+*/
+
+fun eval(e: Expr) : Int =
+        when (e) {
+            is Num -&gt;
+                e.value
+            is Sum -&gt;
+                eval(e.left) + eval(e.right)
+            else -&gt;
+                throw IllegalArgumentException(&quot;Unknown expression&quot;)
+        }
+
+fun main(args: Array&lt;String&gt;) {
+    println(eval(Sum(Sum(Num(1), Num(2)), Num(4))))
+}
+</code></pre><p>##2.18 使用代码块作为if和when结构的分支</p>
+<p><img src="https://i.imgur.com/mrYErVk.png" alt=""></p>
+<p>##2.19 while循环</p>
+<p><img src="https://i.imgur.com/9t7SEdJ.png" alt=""></p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    var i = 0
+
+    while (i &lt; 3) {
+        println(&quot;i = $i&quot;)
+        i += 1
+    }
+
+    i = 0
+
+    while (i &lt; 0) {
+        println(&quot;i = $i&quot;)
+        i += 1
+    }
+
+    var j = 0
+
+    do  {
+        println(&quot;j = $j&quot;)
+        j += 1
+    } while (j &lt; 0)
+}
+</code></pre><p>##2.20 使用for-in循环遍历范围</p>
+<p><img src="https://i.imgur.com/84OQHmJ.png" alt=""></p>
+<p>fun divideInt(i: Int) = when {<br>    i % 3 == 0 -&gt; “$i: 3的倍数”<br>    i % 4 == 0 -&gt; “$i: 4的倍数”<br>    else -&gt; “$i”<br>}</p>
+<p>fun main(args: Array<string>) {<br>    // 使用两个点来表示一个范围，不仅适用于数字，还适用于字母<br>    val oneToTen = 1..10</string></p>
+<pre><code>// 正序遍历
+for (i in oneToTen) {
+    println(divideInt(i))
+}
+
+// 倒序遍历
+for (i in 10 downTo 1) {
+    println(divideInt(i))
+}
+
+// 指定步长  结果为10/8/6/4/2
+for (i in 10 downTo 1 step 2) {
+    println(divideInt(i))
+}
+
+// 不包含11的遍历
+for (i in 1 until 11) {
+    println(divideInt(i))
+}
+</code></pre><p>}</p>
+<p>##2.21 使用for-in循环遍历map</p>
+<p><img src="https://i.imgur.com/O5oykmD.png" alt=""></p>
+<pre><code>import java.util.*
+
+fun main(args: Array&lt;String&gt;) {
+    val binaryReps = TreeMap&lt;Char, String&gt;()
+
+    for (c in &apos;A&apos;..&apos;F&apos;) {
+        val binary = Integer.toBinaryString(c.toInt()) // 转换成二进制字符串
+        binaryReps[c] = binary  // 给Map集合赋值
+    }
+
+    for ((letter, binary) in binaryReps) {
+        println(&quot;$letter = $binary&quot;)
+    }
+
+
+    // 遍历数组，打印索引
+    val list = arrayListOf(&quot;123&quot;, &quot;467&quot;, &quot;73&quot;)
+
+    for ((index, element) in list.withIndex()) {
+        println(&quot;$index: $element&quot;)
+    }
+}
+</code></pre><p>##2.22 使用in判断是否属于集合或范围</p>
+<p><img src="https://i.imgur.com/Um5IDEp.png" alt=""></p>
+<pre><code>fun isLetter(c: Char) = c in &apos;a&apos;..&apos;z&apos; || c in &apos;A&apos;..&apos;Z&apos;
+fun isNotDigit(c: Char) = c !in &apos;0&apos;..&apos;9&apos;
+
+fun recognize(c: Char) = when (c) {
+    in &apos;0&apos;..&apos;9&apos; -&gt; &quot;这是个数字！&quot;
+    in &apos;a&apos;..&apos;z&apos;, in &apos;A&apos;..&apos;Z&apos; -&gt; &quot;这是个字母！&quot;
+    else -&gt; &quot;不知道...&quot;
+}
+
+fun main(args: Array&lt;String&gt;) {
+    println(isLetter(&apos;m&apos;))    // true
+    println(isNotDigit(&apos;x&apos;))    // 这是个数字！
+
+    println(recognize(&apos;8&apos;)) // true
+
+    println(&quot;JavaScript&quot; in &quot;Java&quot;..&quot;Kotlin&quot;) // true
+
+    println(&quot;JavaScript&quot; in setOf(&quot;Java&quot;, &quot;Kotlin&quot;)) // false
+    println(&quot;JavaScript&quot; !in setOf(&quot;Java&quot;, &quot;Kotlin&quot;)) // true
+}
+</code></pre><p>##2.23 异常处理概述</p>
+<p><img src="https://i.imgur.com/Osjj2b8.png" alt=""></p>
+<pre><code>fun doSomething(number: Int) {
+    val percentage =
+        if (number in 0..100)
+            number
+        else
+            throw IllegalArgumentException(&quot;非法参数异常&quot;)
+
+    println(percentage)
+}
+
+fun main(args: Array&lt;String&gt;) {
+    val percentage = 58
+
+    if (percentage !in 0..100) {
+        throw IllegalArgumentException(&quot;非法参数异常&quot;)
+    }
+
+    doSomething(123)
+}
+</code></pre><p>##2.24 try-catch-finally</p>
+<p><img src="https://i.imgur.com/Cfi0dUn.png" alt=""></p>
+<pre><code>import java.io.BufferedReader
+import java.io.StringReader
+
+fun readNumber(reader: BufferedReader): Int? {
+    try {
+        val line = reader.readLine()
+        return Integer.parseInt(line)
+    } catch (e: NumberFormatException) {
+        return null
+    } finally {
+        reader.close()
+    }
+}
+
+fun main(args: Array&lt;String&gt;) {
+    // val reader = BufferedReader(StringReader(&quot;239&quot;))   // 239
+    val reader = BufferedReader(StringReader(&quot;abc&quot;))      // null
+    println(readNumber(reader))
+}
+</code></pre><p>##2.25 try-catch可以作为表达式</p>
+<p><img src="https://i.imgur.com/PiiTCR3.png" alt=""></p>
+<pre><code>import java.io.BufferedReader
+import java.io.StringReader
+
+fun readNumber(reader: BufferedReader) {
+    val number = try {
+        Integer.parseInt(reader.readLine())
+    } catch (e: NumberFormatException) {
+        null
+    }
+    println(number)
+}
+
+fun main(args: Array&lt;String&gt;) {
+    // val reader = BufferedReader(StringReader(&quot;239&quot;))
+    val reader = BufferedReader(StringReader(&quot;abc&quot;))
+    println(readNumber(reader))
+}
+</code></pre><p>#第3章 函数的定义和调用</p>
+<p>##3.1 在Kotlin中创建集合</p>
+<p><img src="https://i.imgur.com/GM4PQVl.png" alt=""></p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    val set = hashSetOf(1, 7, 53)
+
+    val list = arrayListOf(1, 7, 53)
+    val map = hashMapOf(1 to &quot;一&quot;, 7 to &quot;七&quot;, 53 to &quot;五十三&quot;)
+
+    println(set.javaClass)        // class java.util.HashSet
+    println(list.javaClass)        // class java.util.ArrayList
+    println(map.javaClass)        // class java.util.HashMap
+
+    val strings = listOf(&quot;first&quot;, &quot;second&quot;, &quot;fourteenth&quot;)
+    println(strings.last())     // fourteenth
+
+    val numbers = setOf(1, 14, 2)
+    println(numbers.max())        // 14
+}
+</code></pre><p>##3.2 自定义函数以打印集合中的所有元素</p>
+<pre><code>fun main(args: Array&lt;String&gt;) {
+    val list = listOf(1, 2, 3)
+    println(list)   // [1, 2, 3]
+    println(joinToString(list, &quot;; &quot;,&quot;(&quot;, &quot;)&quot;))      // (1; 2; 3)
+}
+
+fun &lt;T&gt; joinToString(collection: Collection&lt;T&gt;,
+                     separator: String,
+                     prefix: String,
+                     postfix: String): String {
+    val result = StringBuffer(prefix)
+
+    for ((index, element) in collection.withIndex()) {
+        if (index &gt; 0) result.append(separator)
+        result.append(element)
+    }
+
+    result.append(postfix)
+    return result.toString()
+}
+</code></pre><p>##3.3 函数声明时的默认参数值</p>
+<p><img src="https://i.imgur.com/ZPllXRE.png" alt=""></p>
+<pre><code>@JvmOverloads
+fun &lt;T&gt; joinToString(collection: Collection&lt;T&gt;,
+                     separator: String = &quot;, &quot;,
+                     prefix: String = &quot;&quot;,
+                     postfix: String = &quot;&quot;
+): String {
+    val result = StringBuilder(prefix)
+
+    for ((index, element) in collection.withIndex()) {
+        if (index &gt; 0) result.append(separator)
+        result.append(element)
+    }
+
+    result.append(postfix)
+
+    return result.toString()
+}
+
+fun main(args: Array&lt;String&gt;) {
+    val list = listOf(1, 2, 3)
+    println(joinToString(list))
+    println(joinToString(list, &quot;; &quot;))
+    println(joinToString(list, postfix = &quot;;&quot;, prefix = &quot;# &quot;))
+}
+</code></pre><p>##3.4 去除静态的实用类之顶层函数</p>
+<p><img src="https://i.imgur.com/xDRyzS7.png" alt=""></p>
+<p>Kotlin.kt</p>
+<pre><code>@file:JvmName(&quot;StringFunctions&quot;)
+
+package mykotlin.firstkotlindemo
+
+fun &lt;T&gt; joinToString(collection: Collection&lt;T&gt;,
+                     separator: String = &quot;, &quot;,
+                     prefix: String = &quot;&quot;,
+                     postfix: String = &quot;&quot;
+): String {
+    val result = StringBuilder(prefix)
+
+    for ((index, element) in collection.withIndex()) {
+        if (index &gt; 0) result.append(separator)
+        result.append(element)
+    }
+
+    result.append(postfix)
+
+    return result.toString()
+}
+
+fun main(args: Array&lt;String&gt;) {
+    val list = listOf(1, 2, 3)
+    println(joinToString(list))
+    println(joinToString(list, &quot;; &quot;))
+    println(joinToString(list, postfix = &quot;;&quot;, prefix = &quot;# &quot;))
+}
+</code></pre><p>Test.java</p>
+<pre><code>package mykotlin;
+
+import mykotlin.firstkotlindemo.StringFunctions;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test {
+    public static void main(String[] args) {
+        List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        System.out.println(StringFunctions.joinToString(list, &quot;, &quot;, &quot;&quot;, &quot;&quot;));
+    }
+}
+</code></pre><p>##3.5 去除静态的实用类之顶层属性</p>
+<p><img src="https://i.imgur.com/Vc1vMBQ.png" alt=""></p>
+<pre><code>var opCount = 0
+
+const val UNIX_LINE_SEPARATOR = &quot;\n&quot;
+// public static final String UNIX_LINE_SEPARATOR = &quot;\n&quot;;
+
+fun performOperation() {
+    opCount++
+    // .....
+}
+
+fun main(args: Array&lt;String&gt;) {
+    performOperation()
+    performOperation()
+    performOperation()
+
+    println(&quot;操作执行了 $opCount 次&quot;)
+}
+</code></pre><p>##3.6 扩展函数的概述</p>
+<p><img src="https://i.imgur.com/IwTHAgk.png" alt=""></p>
+<pre><code>// fun String.lastChar(): Char = this.get(this.length - 1)
+fun String.lastChar(): Char = get(length - 1)
+
+fun main(args: Array&lt;String&gt;) {
+    println(&quot;Kotlin&quot;.lastChar())
+}
+</code></pre><p>##3.7 导入和扩展函数</p>
+<p><img src="https://i.imgur.com/LZZ4bww.png" alt=""></p>
+<p>方法：</p>
+<pre><code>package strings
+
+// fun String.lastChar(): Char = this.get(this.length - 1)
+fun String.lastChar(): Char = get(length - 1)
+</code></pre><p>调用：</p>
+<pre><code>import strings.lastChar as last
+
+fun main(args: Array&lt;String&gt;) {
+    println(&quot;Kotlin&quot;.last())
+}
+</code></pre><p>##3.8 在Java中调用扩展函数</p>
+<p><img src="https://i.imgur.com/0WHnbgu.png" alt=""></p>
+<p>StringUtil.kt</p>
+<pre><code>// fun String.lastChar(): Char = this.get(this.length - 1)
+fun String.lastChar(): Char = get(length - 1)
+</code></pre><p>Test.java</p>
+<pre><code>public class Test {
+    public static void main(String[] args) {
+        System.out.println(StringUtilKt.lastChar(&quot;Kotlin&quot;));
+    }
+}
+</code></pre><p>##3.9 实用函数作为扩展</p>
+<p><img src="https://i.imgur.com/fc1KkXg.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat-reward-image.JPG" alt="JunJie WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay-reward-image.JPG" alt="JunJie Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/23/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/images/avatar.jpg" alt="JunJie">
+            
+              <p class="site-author-name" itemprop="name">JunJie</p>
+              <p class="site-description motion-element" itemprop="description">李俊杰的个人博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JunJie</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
